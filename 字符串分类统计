@@ -1,0 +1,32 @@
+为啥我一到读入空格就出问题
+#include<stdio.h>
+#define N 200
+#include<string.h>
+int main()
+{
+    char a[N];
+    int i,E=0,shuzi=0,kongge=0,other=0;
+    scanf("%s",a);
+    int len=strlen(a);
+    for(i=0;i<len;i++)
+    {
+        if((a[i]>='A'&&a[i]<='Z')||(a[i]>='a'&&a[i]<='z'))
+        {
+            E++;
+        }
+        else if(a[i]>='0'&&a[i]<='9')
+        {
+            shuzi++;
+        }
+        else if(a[i]==' ')
+        {
+            kongge++;
+        }
+        else
+        {
+            other++;
+        }
+    }
+    printf("%d %d %d %d",E,shuzi,kongge,other);
+    return 0;
+}
